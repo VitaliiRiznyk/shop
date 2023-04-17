@@ -18,6 +18,8 @@ import org.springframework.security.crypto.password.PasswordEncoder;
 import org.springframework.security.web.SecurityFilterChain;
 import org.springframework.security.web.csrf.CsrfFilter;
 
+import java.net.URL;
+
 @Configuration
 @EnableWebSecurity
 @EnableMethodSecurity
@@ -30,7 +32,7 @@ public class SecurityConfiguration {
     private final PasswordEncoder passwordEncoder;
 
 
-    /*@Bean
+    @Bean
     CommandLineRunner commandLineRunner() {
         return args -> {
             CustomUser customUser = new CustomUser("Vital", passwordEncoder.encode("123456"),
@@ -42,15 +44,15 @@ public class SecurityConfiguration {
             customUserService.saveNewCustomUser(customUser);
 
             productService.saveProductToDB(new Product("Iphone", 12_009.8,
-                    "Red", ProductBrand.Apple, ProductType.Phone, "512", null));
+                    "Red", ProductBrand.Apple, ProductType.Phone, "512", new URL("https://itechua.com/wp-content/uploads/2023/03/Screenshot_3-39-768x535.jpg")));
             productService.saveProductToDB(new Product("AirPods 2", 3500.02, "White",
-                    ProductBrand.Apple, ProductType.Headphone, null, null));
+                    ProductBrand.Apple, ProductType.Headphone, "24", new URL("https://images.prom.ua/4388354057_w640_h640_besprovodnye-naushniki-dlya.jpg")));
             productService.saveProductToDB(new Product("Cable charger", 1000.05, "White",
-                    ProductBrand.Apple, ProductType.Accessories, null, null));
+                    ProductBrand.Apple, ProductType.Accessories, "24", null));
             productService.saveProductToDB(new Product("AppleWatch 10", 14454.57, "White",
                     ProductBrand.Apple, ProductType.Watch, "24", null));
         };
-    }*/
+    }
 
     @Autowired
     public void registerGlobalAuthentication(AuthenticationManagerBuilder auth) throws Exception {

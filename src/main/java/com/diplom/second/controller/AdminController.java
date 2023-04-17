@@ -35,7 +35,7 @@ public class AdminController {
     @PostMapping("/new-product")
     public void saveNewProduct(@RequestBody Product product) {
         Product product1 = new Product(product.getName(), Double.valueOf(product.getPrice()), product.getColor(),
-                product.getBrand(), product.getProductType(), product.getMemory(), null);
+                product.getBrand(), product.getProductType(), product.getMemory(), product.getPictureURL());
         productService.saveProductToDB(product1);
     }
 }

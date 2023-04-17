@@ -48,7 +48,7 @@ public class MainRestController {
         verificationService.addVerificationToken(new VerificationCustomUser(token, user));
         String email = user.getEmail();
         emailService.sendEmail(email, "Лист підтвердження", "Для підтвердження вашого акаунту" +
-                "натисніть наступне посилання http://localhost:8080/confirm?token=" + token);
+                "натисніть наступне посилання https://17042023.azurewebsites.net/confirm?token=" + token);
         return "Користувач зареєстрований, на e-mail адресу надіслано листа верифікації";
     }
 

@@ -4,6 +4,8 @@ import jakarta.annotation.Nullable;
 import jakarta.persistence.*;
 import lombok.*;
 
+import java.net.URL;
+
 @Entity
 @Getter
 @Setter
@@ -23,17 +25,17 @@ public class Product {
     private ProductType productType;
     @Nullable
     private String memory;
-    @Lob
-    private byte[] picture;
+
+    private URL pictureURL;
 
     public Product(String name, Double price, String color, ProductBrand brand,
-                   ProductType productType, String memory, byte[] picture) {
+                   ProductType productType, String memory, URL pictureURL) {
         this.name = name;
         this.price = price;
         this.color = color;
         this.brand = brand;
         this.productType = productType;
         this.memory = memory;
-        this.picture = picture;
+        this.pictureURL = pictureURL;
     }
 }
